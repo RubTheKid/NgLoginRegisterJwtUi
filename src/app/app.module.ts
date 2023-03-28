@@ -9,12 +9,16 @@ import { RouterModule } from '@angular/router';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { RegisterComponent } from './services/register/register.component';
 import { LoginComponent } from './services/login/login.component';
+import { HomeComponent } from './services/home/home.component';
+import { PageNotFoundComponent } from './services/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
   BrowserModule,
@@ -23,9 +27,11 @@ import { LoginComponent } from './services/login/login.component';
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
+      {path: 'home', component: HomeComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
-      {path: '', redirectTo: '/login', pathMatch: 'full'}
+      {path: '', redirectTo: '/login', pathMatch: 'full'},
+      {path: '**', component: PageNotFoundComponent}
     ])
   ],
   providers: [{provide: HTTP_INTERCEPTORS,
