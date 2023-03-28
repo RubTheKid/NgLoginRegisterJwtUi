@@ -17,11 +17,6 @@ export class LoginComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
-  
-register(user: User){
-    this.AuthService.register(user).subscribe();
-  }
-
   login(user: User){
     this.AuthService.login(user).subscribe((token: string) => {
       localStorage.setItem('authToken', token);

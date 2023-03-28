@@ -19,15 +19,13 @@ export class AuthService {
 
   public login (user: User): Observable<any>{
     return this.http.post(
-      'https://localhost:7164/api/Auth/register',
+      'https://localhost:7164/api/Auth/login',
       user, { responseType: 'text' }
     );
   }
 
   public getUserName(): Observable<string>{
-    return this.http.get<string>('https://localhost:7164/api/Auth/');
+    return this.http.get('https://localhost:7164/api/Auth', {responseType: 'text'});
   }
-  
-  
 
 }
