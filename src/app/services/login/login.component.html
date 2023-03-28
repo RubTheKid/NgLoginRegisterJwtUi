@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+<div class="container">
+    <div class="forms">
+        <div class="form login">
+            <span class="title">Login</span>
+            <div class="input-field">
+                <input [(ngModel)]="user.username" placeholder="name">
+                <i class="uil uil-envelope-alt icon"></i>
+            </div>
+            <div class="input-field">
+                <input [(ngModel)]="user.password" placeholder="pwd" type="password">
+                <i class="uil uil-key-skeleton icon"></i>
+                <i class="uil uil-eye-slash showHidePw"></i>
+            </div>
+            <div class="checkbox-text">
+                <div class="checkbox-content">
+                    <input type="checkbox" id="logCheck">
+                    <label for="logCheck" class="text">Remember me</label>
+                </div>
+                <button (click)="getusername()">Get User Name</button>
+            </div>
+            <div class="input-field button">
+                <button (click)="login(user)">login</button>
+            </div>
+            <div class="login-signup">
+                <span class="text"> Not a member?
+                    <a class="text signup-link" routerLink="/register">Sign Up Now!</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+<div class="container">
+    <div class="forms">
+        <div class="form login">
+            <span class="title">Register</span>
+            <div class="input-field">
+                <input [(ngModel)]="user.username" placeholder="name">
+                <i class="uil uil-envelope-alt icon"></i>
+            </div>
+            <div class="input-field">
+                <input [(ngModel)]="user.password" placeholder="pwd" type="password">
+                <i class="uil uil-key-skeleton icon"></i>
+            </div>
+            <div class="input-field button">
+                <button (click)="register(user)">register</button>
+            </div>
+            <span class="text">
+                <a class="text signup-link" routerLink="/login">Return to login page</a>
+            </span>
+        </div>
+    </div>
+</div>

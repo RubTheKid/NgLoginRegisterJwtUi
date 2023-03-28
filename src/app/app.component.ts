@@ -13,22 +13,4 @@ export class AppComponent {
 
   constructor(private AuthService: AuthService){}
 
-  register(user: User){
-    this.AuthService.register(user).subscribe();
-  }
-
-  login(user: User){
-    this.AuthService.login(user).subscribe((token: string) => {
-      localStorage.setItem('authToken', token);
-    });
-  }
-
-  getusername(){
-    this.AuthService.getUserName().subscribe((name: string) =>{
-      console.log(name);
-    });
-  }
-
-
-
 }
